@@ -28,9 +28,9 @@ module CheckboxesBuilder
       "<li><label for=\"#{id}\"><input id=\"#{id}\" name=\"#{name}\" type=\"#{type}\" value=\"#{value}\"#{checked} />&nbsp;#{label}</label></li>"
     }
     html_attrs = html_options.blank? ? "" : html_options.map {|k, v| " #{k}=\"#{v}\"" }.join
-    out = "<ul#{html_attrs}>\n" + tags.join("\n") + "\n</ul>"
+    out = "<ul#{html_attrs}>\n" + tags.join("\n") + "\n</ul>\n"
+    out += "<input type=\"hidden\" name=\"#{@object_name}[#{collection_sname}_ids][]\">"
     out.html_safe
   end
-  
 end
 end
