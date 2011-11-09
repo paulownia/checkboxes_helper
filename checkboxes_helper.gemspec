@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{checkboxes_helper}
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = [%q{nil paulownia}]
@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
+    "checkboxes_helper.gemspec",
     "lib/checkboxes_helper.rb",
     "lib/checkboxes_helper/checkboxes_builder.rb",
     "spec/checkboxes_helper_spec.rb",
