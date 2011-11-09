@@ -17,8 +17,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "checkboxes_helper"
   gem.homepage = "http://github.com/paulownia/checkboxes_helper"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{A Helper for ActionView generating checkboxes.}
+  gem.description = %Q{Generate check-boxes about one-to-many associations of an ActiveRecord model.}
   gem.email = "nil@paulownia.jp"
   gem.authors = ["nil paulownia"]
   # dependencies defined in Gemfile
