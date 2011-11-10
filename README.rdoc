@@ -1,6 +1,56 @@
 = checkboxes_helper
 
-Description goes here.
+An action_view's form helper about has_many through associaions in ruby on rails application.
+
+== Usage
+
+  <%= f.check_boxes(:collection, Collection.all.map { |c| [c.id, c.label] }, { :class => "class_value"  } )  %>
+  
+  <%= f.collection_check_boxes(:collection, Collection.all, :id, :name,  { :class => "class_value"  } )  %>
+
+== Sample 
+
+Models are
+
+  class Book
+    has_many :book_genres
+    has_many :genres, :through => :book_genres
+  end
+
+  class BookGenre
+    belongs_to :book
+    belongs_to :genre
+  end
+
+  class Genre
+    has_many :book_genres
+    has_many :books, :through => :book_genres
+  end
+
+You write to app/views/books/_form.html.erb as follows
+
+  <%= form_for(@book) do |f| %>  
+  ...
+  <%= f.check_boxes(:genres, Genre.all.map{|g| [g.id, g.name] }) %>
+  ...
+  <% end %>
+
+The erb gerenate checkboxes, for example
+
+  <ul>
+    <li><input type="checkbox" name="book[genre_ids][]" value="1" checked>
+    <li><input type="checkbox" name="book[genre_ids][]" value="2">
+  </ul>
+
+And in the book_controller, the book model is updated, the book_genres intermediate table is updated too.
+So you call only
+
+  @book.update_attributes(params[:book])
+
+or 
+  
+  @book.save(params[:book]) 
+
 
 == Contributing to checkboxes_helper
  
