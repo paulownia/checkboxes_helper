@@ -23,7 +23,7 @@ module CheckboxesBuilder
       id = "#{@object_name}_#{collection_name}_#{value}"
       name = "#{@object_name}[#{collection_sname}_ids][]"
       type = "checkbox"
-      checked = collection_ids.include?(value) ? " checked" : ""
+      checked = collection_ids.include?(value) ? " checked=\"checked\"" : ""
       
       "<li><label for=\"#{id}\"><input id=\"#{id}\" name=\"#{name}\" type=\"#{type}\" value=\"#{value}\"#{checked} />&nbsp;#{label}</label></li>"
     }
